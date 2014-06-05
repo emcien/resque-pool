@@ -119,8 +119,6 @@ The pool manager responds to the following signals:
 * `INT`   - gracefully shut down workers (via `QUIT`) and immediately shutdown manager
 * `TERM`  - immediately shut down workers (via `INT`) and immediately shutdown manager
   _(configurable via command line options)_
-* `WINCH` - _(only when running as a daemon)_ send `QUIT` to each worker, but
-  keep manager running (send `HUP` to reload config and restart workers)
 * `USR1`/`USR2`/`CONT` - pass the signal on to all worker parents (see Resque docs).
 
 Use `HUP` to help logrotate run smoothly and to change the number of workers
